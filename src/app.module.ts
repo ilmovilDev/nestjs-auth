@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { CommonModule } from './common/common.module';
+import { DatabaseModule } from './database/database.module';
 
 // Files config
 import appConfig from './common/@config/app.config';
@@ -21,7 +22,8 @@ import swaggerConfig from './common/@config/swagger.config';
         swaggerConfig
       ] 
     }),
-    CommonModule
+    CommonModule,
+    DatabaseModule
   ],
   controllers: [],
   providers: [],
