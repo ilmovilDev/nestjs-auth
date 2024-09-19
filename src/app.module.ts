@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { CommonModule } from './common/common.module';
 import { DatabaseModule } from './database/database.module';
+import { FunctionalitiesModule } from './functionalities/functionalities.module';
 
 // Files config
 import appConfig from './common/@config/app.config';
@@ -23,7 +24,8 @@ import swaggerConfig from './common/@config/swagger.config';
       ] 
     }),
     CommonModule,
-    DatabaseModule
+    DatabaseModule,
+    FunctionalitiesModule
   ],
   controllers: [],
   providers: [],
