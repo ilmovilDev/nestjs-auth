@@ -1,12 +1,21 @@
+interface Role {
+    name: string;
+}
 
 interface SeedData {
-    roles: [];
+    roles: Role[];
     users: [];
 }
 
 export const initialData: SeedData = {
 
-    roles: [],
+    roles: [
+        { name: 'root' },
+        { name: 'admin' },
+        { name: 'guest' },
+        { name: 'user' },
+        { name: 'client' },
+    ],
 
     users: []
     
