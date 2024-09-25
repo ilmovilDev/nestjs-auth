@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
-import { SeedModule } from './seed/seed.module';
 import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
+import { MailerModule } from './mailer/mailer.module';
 
 @Module({
-  imports: [SeedModule, UsersModule]
+  imports: [UsersModule, AuthModule, MailerModule]
 })
 export class FunctionalitiesModule {}

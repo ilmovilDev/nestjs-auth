@@ -10,6 +10,7 @@ import dbConfig from './common/@config/db.config';
 import jwtConfig from './common/@config/jwt.config';
 import mailerConfig from './common/@config/mailer.config';
 import swaggerConfig from './common/@config/swagger.config';
+import bcryptConfig from './common/@config/bcrypt.config';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import swaggerConfig from './common/@config/swagger.config';
       load: [
         appConfig,
         dbConfig,
+        bcryptConfig,
         jwtConfig,
         mailerConfig,
         swaggerConfig
