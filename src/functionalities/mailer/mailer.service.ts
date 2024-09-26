@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import * as nodemailer from 'nodemailer';
 import { SendEmail } from './@types/send-email';
-import { HandleErrors } from 'src/common/@services/handle-errors.service';
+import { HandleErrors } from 'src/common/services/handle-errors.service';
 import Mail from 'nodemailer/lib/mailer';
 
 @Injectable()

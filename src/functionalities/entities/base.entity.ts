@@ -1,4 +1,4 @@
-import { Status } from "src/common/@enum/status.enum";
+import { Status } from "src/common/enum/status.enum";
 import { Column, CreateDateColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 export class BaseEntity {

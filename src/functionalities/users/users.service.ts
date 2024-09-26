@@ -5,14 +5,14 @@ import { ConfigService } from '@nestjs/config';
 import * as bcrypt from 'bcrypt';
 import { v4 as uuidv4 } from 'uuid';
 
-import { HandleErrors } from 'src/common/@services/handle-errors.service';
+import { HandleErrors } from 'src/common/services/handle-errors.service';
 import { User } from '../entities/user.entity';
 import { CreateUserDto } from '../dtos/create-user.dto';
 import { isUUID } from 'class-validator';
 
 @Injectable()
 export class UsersService {
-  private readonly saltRounds: number;
+  private readonly bcrypt_salt: number;
 
   constructor(
     @InjectRepository(User)
@@ -20,7 +20,7 @@ export class UsersService {
     private readonly configService: ConfigService,
     private readonly handleErrors: HandleErrors,
   ) {
-    this.saltRounds = this.configService.getOrThrow('bcrypt.salt');
+    this.bcrypt_salt = this.configService.getOrThrow<number>('app.bcrypt_salt');
   }
 
   /**
@@ -115,7 +115,7 @@ export class UsersService {
    * @returns string - The hashed password.
    */
   private hashPassword(password: string): string {
-    return bcrypt.hashSync(password, this.saltRounds);
+    return bcrypt.hashSync(password, this.bcrypt_salt);
   }
 
   /**

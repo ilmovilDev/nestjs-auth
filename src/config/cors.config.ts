@@ -1,6 +1,4 @@
-import { CorsOptions } from '@nestjs/common/interfaces/external/cors-options.interface';
-
-export function corsConfig(): CorsOptions {
+export function corsConfig() {
   return {
     origin: ['https://my-site.com', 'https://another-site.com'], // Lista de orígenes permitidos
     methods: 'GET,POST,PUT,PATCH,DELETE', // Métodos HTTP permitidos
